@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexander's website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+        }
+        header {
+            background: #f00505;
+            color: #fff;
+            padding: 10px 20px;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            display: none;
+        }
+        section.active {
+            display: block;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 20px;
+            background: #333;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Alexander's website</h1>
+        <nav>
+            <ul>
+                <li><a onclick="showPage('home')">首頁</a></li>
+                <li><a onclick="showPage('achievements')">學習成就</a></li>
+                <li><a onclick="showPage('experience')">經歷</a></li>
+                <li><a onclick="showPage('future')">未來計畫</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- 首頁 -->
+        <section id="home" class="active">
+            <h2>歡迎來到我的網站</h2>
+            <p>這是一個關於Alexander的學習與經歷的簡介。歡迎了解更多!</p>
+        </section>
+
+        <!-- 學習成就 -->
+        <section id="achievements">
+            <h2>學習成就</h2>
+            <ul>
+                <li>國科會計畫</li>
+                <li>臺灣公設財團法人政治任用職位調查與資料庫建置之研究</li>
+            </ul>
+        </section>
+
+        <!-- 經歷 -->
+        <section id="experience">
+            <h2>經歷</h2>
+            <ul>
+                <li>東海大學學生</li>
+                <li>資管系學會會長</li>
+                <li>籃球隊隊長</li>
+                <li>選舉委員會幹部</li>
+            </ul>
+        </section>
+
+        <!-- 未來計畫 -->
+        <section id="future">
+            <h2>未來計畫</h2>
+            <p>未來，我希望能夠：</p>
+            <ul>
+                <li>參與更多實務項目，提升專業技能</li>
+                <li>在碩士班繼續攻讀資訊相關領域</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Alexander's website</p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // 隱藏所有 section
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+            // 顯示選中的 section
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
